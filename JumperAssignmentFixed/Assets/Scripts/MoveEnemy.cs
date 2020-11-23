@@ -15,6 +15,6 @@ public class MoveEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rigidbody.velocity = Vector3.back * speed;
+        Rigidbody.velocity = Vector3.forward * speed;
     }
 }
