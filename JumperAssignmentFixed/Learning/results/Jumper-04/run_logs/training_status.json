@@ -1,0 +1,23 @@
+{
+    "My Behavior": {
+        "checkpoints": [
+            {
+                "steps": 3273,
+                "file_path": "results\\Jumper-04\\My Behavior\\My Behavior-3273.nn",
+                "reward": -1.0,
+                "creation_time": 1606126467.624518
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3273,
+            "file_path": "results\\Jumper-04\\My Behavior.nn",
+            "reward": -1.0,
+            "creation_time": 1606126467.624518
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.21.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

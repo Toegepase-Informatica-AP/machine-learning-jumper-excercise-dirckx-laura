@@ -11,13 +11,14 @@ using Random = UnityEngine.Random;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> spawnableObjects;
+   
 
-    [Tooltip("The Spawner waits a random number of seconds between these two interval each time a object was spawned.")]
-    [SerializeField] private float minSpawnIntervalInSeconds;
-    [SerializeField] private float maxSpawnIntervalInSeconds;
+   
+    [SerializeField] private GameObject Spawnvolume;
 
     private Jump jumper;
     private List<GameObject> spawnedObjects = new List<GameObject>();
+    public float Timer = 2;
 
     private void Awake()
     {
@@ -25,23 +26,27 @@ public class Spawner : MonoBehaviour
         //Subscribes to Reset of Player
         jumper.OnReset += DestroyAllSpawnedObjects;
 
-        StartCoroutine(nameof(Spawn));
-    }
-
-    private IEnumerator Spawn()
-    {
       
-
-       
-       
-        var spawned = Instantiate(GetRandomSpawnableFromList(), transform.position, transform.rotation, transform);
-        spawnedObjects.Add(spawned);
-        //Debug.Log(spawned.transform.position);
-        
-
-        yield return new WaitForSeconds(Random.Range(minSpawnIntervalInSeconds, maxSpawnIntervalInSeconds));
-        StartCoroutine(nameof(Spawn));
     }
+
+   private void Update()
+    {
+        Timer -= Time.deltaTime;
+        if (Timer <= 0f)
+        {
+
+            GameObject newEnemyBlock = Instantiate(GetRandomSpawnableFromList().gameObject);
+            newEnemyBlock.transform.localPosition = Spawnvolume.transform.position;
+
+
+
+
+            spawnedObjects.Add(newEnemyBlock);
+
+            Timer = 2f;
+        }
+    }
+
     private void DestroyAllSpawnedObjects()
     {
         for (int i = spawnedObjects.Count - 1; i >= 0; i--)
@@ -53,7 +58,7 @@ public class Spawner : MonoBehaviour
     private GameObject GetRandomSpawnableFromList()
     {
         int randomIndex = UnityEngine.Random.Range(0, spawnableObjects.Count);
-        Debug.Log(spawnableObjects[randomIndex].transform.position);
+       
         return spawnableObjects[randomIndex];
     }
 }

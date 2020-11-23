@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
 {
-    [SerializeField] private float speed;
+
+    private float speed = 10;
+
     private Rigidbody Rigidbody;
 
+    private float randomizedSpeed = 0f;
 
-    private void Awake()
+
+    private void Start()
     {
         Rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        Rigidbody.velocity = Vector3.forward * speed;
+        randomizedSpeed = speed * Random.Range(0.5f, 2f);
+        Rigidbody.velocity = new Vector3(0,0,  randomizedSpeed);
     }
 }

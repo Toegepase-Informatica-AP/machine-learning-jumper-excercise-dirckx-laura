@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.MLAgents;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreCollector : MonoBehaviour
 {
     public static ScoreCollector Instance;
 
-    [SerializeField] private TextMeshProUGUI display;
+    [SerializeField] private Text display;
 
-    private StatsRecorder statsRecorder;
-    private int highScore = 0;
+  
+
     void Awake()
     {
         Instance = this;
-        statsRecorder = Academy.Instance.StatsRecorder;
+     
     }
 
-    public void AddScore(int score)
+    public void AddScore(float score)
     {
-        if (score > highScore)
-        {
-            highScore = score;
+       
             display.text = score.ToString();
-            statsRecorder.Add("High Score", highScore, StatAggregationMethod.MostRecent);
-        }
+            
+        
 
     }
 }

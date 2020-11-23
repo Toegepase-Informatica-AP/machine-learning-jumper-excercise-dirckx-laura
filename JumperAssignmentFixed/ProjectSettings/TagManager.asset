@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Platform
+  - score
   layers:
   - Default
   - TransparentFX

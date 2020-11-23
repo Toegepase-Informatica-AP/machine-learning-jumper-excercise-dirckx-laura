@@ -87,6 +87,7 @@ public class Jump : Agent
     {
         if (collidedObj.gameObject.CompareTag("score"))
         {
+            Debug.Log("score");
             AddReward(0.1f);
             score++;
             ScoreCollector.Instance.AddScore(score);
