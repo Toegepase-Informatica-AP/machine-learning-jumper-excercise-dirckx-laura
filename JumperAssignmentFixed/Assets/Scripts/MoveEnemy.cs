@@ -19,7 +19,7 @@ public class MoveEnemy : MonoBehaviour
 
     private void Update()
     {
-        randomizedSpeed = speed * Random.Range(0.5f, 2f);
+        randomizedSpeed = speed * Random.Range(1f, 1.5f);
         Rigidbody.velocity = new Vector3(0,0,  randomizedSpeed);
     }
 }

@@ -1,18 +1,42 @@
 {
-    "My Behavior": {
+    "Jump": {
         "checkpoints": [
             {
-                "steps": 19607,
-                "file_path": "results\\Jumper-01\\My Behavior\\My Behavior-19607.nn",
-                "reward": -1.0,
-                "creation_time": 1606126116.7110822
+                "steps": 12199966,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12199966.nn",
+                "reward": -0.4999999925494194,
+                "creation_time": 1606257551.7093048
+            },
+            {
+                "steps": 12249959,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12249959.nn",
+                "reward": -0.21428569938455308,
+                "creation_time": 1606257614.6856208
+            },
+            {
+                "steps": 12299946,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12299946.nn",
+                "reward": -0.7933333287636439,
+                "creation_time": 1606257677.1310017
+            },
+            {
+                "steps": 12349939,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12349939.nn",
+                "reward": null,
+                "creation_time": 1606257742.5257244
+            },
+            {
+                "steps": 12376550,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12376550.nn",
+                "reward": -0.48999998681247237,
+                "creation_time": 1606257835.7402744
             }
         ],
         "final_checkpoint": {
-            "steps": 19607,
-            "file_path": "results\\Jumper-01\\My Behavior.nn",
-            "reward": -1.0,
-            "creation_time": 1606126116.7110822
+            "steps": 12376550,
+            "file_path": "results\\Jumper-01\\Jump.nn",
+            "reward": -0.48999998681247237,
+            "creation_time": 1606257835.7402744
         }
     },
     "metadata": {

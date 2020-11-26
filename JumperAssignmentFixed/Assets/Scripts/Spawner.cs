@@ -18,7 +18,8 @@ public class Spawner : MonoBehaviour
 
     private Jump jumper;
     private List<GameObject> spawnedObjects = new List<GameObject>();
-    public float Timer = 2;
+    private const float SPAWN_TIMER = 3f;
+    public float Timer = SPAWN_TIMER;
 
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class Spawner : MonoBehaviour
 
             spawnedObjects.Add(newEnemyBlock);
 
-            Timer = 2f;
+            Timer = SPAWN_TIMER;
         }
     }
 
