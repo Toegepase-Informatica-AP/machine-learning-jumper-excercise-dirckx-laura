@@ -97,7 +97,7 @@ De YAML parameters zijn nog steeds dezelfde als die van de vorige runs.
 
 * Collision met enemy block: -1
 * Het pakken van een coin: +0.5
-* SProngen die de agent maakt: -0.2
+* Sprongen die de agent maakt: -0.2
 * Per frame dat de agent op de grond blijft staan: +0.001
 
 **Environments**
