@@ -334,6 +334,7 @@ Eerste twee runs waren met 8 environments, nu met 6.
 
 ### Bronvermelding
 
-Schuchmann, S. S. (2020, May 19). Ultimate Walkthrough for ML-Agents in Unity3D. Towardsdatascience. <https://towardsdatascience.com/ultimate-walkthrough-for-ml-agents-in-unity3d-5603f76f68b?gi=24091b69b52d>
+* Schuchmann, S. S. (2020, May 19). Ultimate Walkthrough for ML-Agents in Unity3D. Towardsdatascience. <https://towardsdatascience.com/ultimate-walkthrough-for-ml-agents-in-unity3d-5603f76f68b?gi=24091b69b52d>
 
-Unity Technologies. (2018, September 6). Example Learning Environments. ML-Agents - Example Learning Environments. https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md
+* Unity Technologies. (2018, September 6). Example Learning Environments. ML-Agents - Example Learning Environments. https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md
+
