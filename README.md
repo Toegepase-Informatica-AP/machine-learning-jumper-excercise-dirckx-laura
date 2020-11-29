@@ -87,6 +87,27 @@ De YAML parameters zijn dezelfde als die van run 1.
 **Conclusie:** Betere topresultaten als vorige run, toevoegen van jump punishment was een goede beslissing. Agent wacht tot Enemy dicht genoeg komt, maar heeft weinig tijd om te reageren aangezien de spawnrate 2 seconden is.
 Nieuwe run zal met een hogere spawntimer zijn van Enemy (Om de 3 seconden ipv om de 2).
 
+#### Derde training
+
+**yml parameters:**
+
+De YAML parameters zijn nog steeds dezelfde als die van de vorige runs.
+
+**Reward systeem**
+
+* Collision met enemy block: -1
+* Het pakken van een coin: +0.5
+* SProngen die de agent maakt: -0.2
+* Per frame dat de agent op de grond blijft staan: +0.001
+
+**Environments**
+
+Eerste twee runs waren met 8 environments, nu met 6.
+
+![Grafiel run 3](./Resultaten/Resultaat_Run3.png)
+
+**Conclusie:** De resultaten zijn nog niet helemaal zoals we verwacht hadden. De agent heeft nog veel te veel dalingen en blijft niet consistent op dezelfde cumulatieve reward.
+
 ### Bronvermelding
 
 Schuchmann, S. S. (2020, May 19). Ultimate Walkthrough for ML-Agents in Unity3D. Towardsdatascience. <https://towardsdatascience.com/ultimate-walkthrough-for-ml-agents-in-unity3d-5603f76f68b?gi=24091b69b52d>

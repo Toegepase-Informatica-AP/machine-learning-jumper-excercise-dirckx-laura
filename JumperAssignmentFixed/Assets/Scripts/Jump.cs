@@ -27,6 +27,10 @@ public class Jump : Agent
         if (jumpIsReady)
             RequestDecision();
 
+        if (transform.position.y <= 1.2)
+        {
+            AddReward(0.001f);
+        }
     }
 
     public override void OnActionReceived(float[] vectorAction)
