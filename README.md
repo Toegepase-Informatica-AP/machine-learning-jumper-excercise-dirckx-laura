@@ -2,6 +2,12 @@
 
 ## Laura Dirckx & Nico Chauvaux
 
+### Inhoudstafel
+
+### Spelverloop
+
+Maak een zelflerende agent aan die een obstakel ontwijkt door er over te springen. Het obstakel krijgt elke episode een andere snelheid mee. De agent wordt geconfronteerd met een rij van continu bewegende obstakels.
+
 ### Stap 1
 
 Brainstorming, voorbeelden bekijken van ML-agents.
@@ -14,9 +20,207 @@ New Unity Project, dan een stage maken, dan Agent overnemen van ML-agents.
 
 Scripts bekijken en aanpassen van ML-agents voorbeeld (WallJump).
 
+#### Agent/Jumper
+
+![Agent](Agent.png)
+
+Eerst een script schrijven zodat de agent kan springen. Daarna maken we van dit 'normaal' script een Agent.
+
+**jump script**
+
+
+```
+public class Jump : Agent
+{
+    [SerializeField] private float jumpForce;
+    [SerializeField] private KeyCode jumpKey;
+
+    private bool jumpIsReady = true;
+    private Rigidbody rBody;
+    private Vector3 startingPosition;
+    private int score = 0;
+    public event Action OnReset;
+
+    public override void Initialize()
+    {
+        rBody = GetComponent<Rigidbody>();
+        startingPosition = transform.position;
+    }
+
+    private void FixedUpdate()
+    {
+        if (jumpIsReady)
+            RequestDecision();
+
+        if (transform.position.y <= 1.2)
+        {
+            AddReward(0.001f);
+        }
+    }
+
+    public override void OnActionReceived(float[] vectorAction)
+    {
+        if ( Mathf.FloorToInt(vectorAction[0]) == 1)    
+            Jumper();            
+    }
+
+    public override void OnEpisodeBegin()
+    {
+        Reset();
+    }
+
+    public override void Heuristic(float[] actionsOut)
+    {
+        actionsOut[0] = 0;
+        if (Input.GetKey(jumpKey))
+            actionsOut[0] = 1;
+    }
+
+    private void Jumper()
+    {
+        if (jumpIsReady)
+        {
+            rBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.VelocityChange);
+            jumpIsReady = false;
+            AddReward(-0.2f);
+        }
+    }
+
+
+    private void Reset()
+    {
+        score = 0;
+        jumpIsReady = true;
+
+        //Reset Movement and Position
+        transform.position = startingPosition;
+        rBody.velocity = Vector3.zero;
+
+        OnReset?.Invoke();
+    }
+
+    private void OnCollisionEnter(Collision collidedObj)
+    {
+        if (collidedObj.gameObject.CompareTag("Platform"))
+            jumpIsReady = true;
+
+        else if (collidedObj.gameObject.CompareTag("Enemy"))
+        {
+            AddReward(-1.0f);
+            Debug.Log(GetCumulativeReward());
+            EndEpisode();
+        }
+           
+    }
+
+    private void OnTriggerEnter(Collider collidedObj)
+    {
+        if (collidedObj.gameObject.CompareTag("score"))
+        {
+            AddReward(0.5f);
+            score++;
+            ScoreCollector.Instance.AddScore(score);
+        }
+    }
+}
+```
+
+#### Enemyblock
+
+'enemyblock' die op random snelheid in één richting beweegt.
+
+![Enemyblock](Enemyblock.png)
+
+#### Wall of death
+
+We gebruiken een 'wall of death' zodat de 'enemyblocks' verwijdert worden.
+
+![Wallofdeath](wallofdeath.png)
+
+#### Coin
+
+Om de Agent te kunnen belonen voor het springen, gebruiken we coins die boven de enemyblocks zweven. Als de agent deze vangt, krijgt hij een reward.
+
+![coin](coin.png)
+
+#### Spawner
+
+We hebben een overkoepelend gameobject genaamd 'Spawner', in dit gameobject specifiëren we het gedrag van zijn child objecten.
+
+We werken met een 'spawnvolume' waar de enemyblocks in moeten spawnen. Hierdoor word het makkelijk om later het spawnvolume te verplaatsen.
+
+Ook word de enemyblock uit een lijst gehaald. Dit is naar later ook makkelijker als er meer enemyblocks zouden moeten aangemaakt worden.
+
+```
+Environment
+│
+└───Spawner
+│   │
+│   └───Agent
+│   │
+│   └───Wall of death
+│   │
+│   └───SpawnVolume
+|
+└───Scenery
+    │   Platform
+```
+
+```
+public class Spawner : MonoBehaviour
+{
+    [SerializeField] private List<GameObject> spawnableObjects;
+   
+
+   
+    [SerializeField] private GameObject Spawnvolume;
+
+    private Jump jumper;
+    private List<GameObject> spawnedObjects = new List<GameObject>();
+    private const float SPAWN_TIMER = 3f;
+    public float Timer = SPAWN_TIMER;
+
+    private void Awake()
+    {
+        jumper = GetComponentInChildren<Jump>();
+        jumper.OnReset += DestroyAllSpawnedObjects;
+
+      
+    }
+
+   private void Update()
+    {
+        Timer -= Time.deltaTime;
+        if (Timer <= 0f)
+        {
+            GameObject newEnemyBlock = Instantiate(GetRandomSpawnableFromList().gameObject);
+            newEnemyBlock.transform.localPosition = Spawnvolume.transform.position;
+            spawnedObjects.Add(newEnemyBlock);
+
+            Timer = SPAWN_TIMER;
+        }
+    }
+
+    private void DestroyAllSpawnedObjects()
+    {
+        for (int i = spawnedObjects.Count - 1; i >= 0; i--)
+        {
+            Destroy(spawnedObjects[i]);
+            spawnedObjects.RemoveAt(i);
+        }
+    }
+    private GameObject GetRandomSpawnableFromList()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, spawnableObjects.Count);
+       
+        return spawnableObjects[randomIndex];
+    }
+}
+```
+
 ### Stap 4
 
-Agent maken, en logica voor agent toevoegen. + Reward system.
+Het spel zelf testen. Daarna alles toevoegen om er een Agent van te maken, een Decision requester en alle nodige configuratie.
 
 ### Stap 5
 
