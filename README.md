@@ -4,6 +4,26 @@
 
 ### Inhoudstafel
 
+<!-- Start Document Outline -->
+
+* [Spelverloop](#spelverloop)
+* [Stap 1](#stap-1)
+* [Stap 2](#stap-2)
+* [Stap 3](#stap-3)
+	* [Agent/Jumper](#agentjumper)
+	* [Enemyblock](#enemyblock)
+	* [Wall of death](#wall-of-death)
+	* [Coin](#coin)
+	* [Spawner](#spawner)
+* [Stap 4](#stap-4)
+* [Stap 5](#stap-5)
+	* [Eerste training](#eerste-training)
+	* [Tweede training](#tweede-training)
+	* [Derde training](#derde-training)
+* [Bronvermelding](#bronvermelding)
+
+<!-- End Document Outline -->
+
 ### Spelverloop
 
 Maak een zelflerende agent aan die een obstakel ontwijkt door er over te springen. Het obstakel krijgt elke episode een andere snelheid mee. De agent wordt geconfronteerd met een rij van continu bewegende obstakels.
