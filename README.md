@@ -323,7 +323,7 @@ De YAML parameters zijn nog steeds dezelfde als die van de vorige runs.
 * Het pakken van een coin: +0.5
 * Sprongen die de agent maakt: -0.2
 * Per frame dat de agent op de grond blijft staan: +0.001
-enerae
+
 **Environments**
 
 Eerste twee runs waren met 8 environments, nu met 6.
