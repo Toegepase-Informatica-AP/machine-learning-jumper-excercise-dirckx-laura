@@ -27,6 +27,10 @@ public class Jump : Agent
         if (jumpIsReady)
             RequestDecision();
 
+        if (transform.position.y <= 1.2)
+        {
+            AddReward(0.001f);
+        }
     }
 
     public override void OnActionReceived(float[] vectorAction)
@@ -53,6 +57,7 @@ public class Jump : Agent
         {
             rBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.VelocityChange);
             jumpIsReady = false;
+            AddReward(-0.2f);
         }
     }
 
@@ -88,7 +93,8 @@ public class Jump : Agent
         if (collidedObj.gameObject.CompareTag("score"))
         {
             Debug.Log("score");
-            AddReward(0.1f);
+            AddReward(0.5f);
+            Debug.Log(GetCumulativeReward());
             score++;
             ScoreCollector.Instance.AddScore(score);
         }

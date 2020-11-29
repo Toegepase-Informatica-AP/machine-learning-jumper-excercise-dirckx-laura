@@ -1,0 +1,7 @@
+Rewards:
+- Enemy: -1.0
+- Coin: +0.5
+- Jump: -0.2
+
+Conclusie: Betere topresultaten als vorige run, toevoegen van jump punishment was een goede beslissing. Agent wacht tot Enemy dicht genoeg komt, maar heeft weinig tijd om te reageren aangezien de spawnrate 2 seconden is.
+Nieuwe run zal met een hogere spawntimer zijn van Enemy (Om de 4 seconden ipv om de 2).

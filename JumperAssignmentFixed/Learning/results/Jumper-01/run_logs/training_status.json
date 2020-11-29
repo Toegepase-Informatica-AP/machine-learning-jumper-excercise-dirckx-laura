@@ -2,41 +2,41 @@
     "Jump": {
         "checkpoints": [
             {
-                "steps": 549986,
-                "file_path": "results\\Jumper-01\\Jump\\Jump-549986.nn",
-                "reward": -0.2999999672174454,
-                "creation_time": 1606154029.784759
+                "steps": 12199966,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12199966.nn",
+                "reward": -0.4999999925494194,
+                "creation_time": 1606257551.7093048
             },
             {
-                "steps": 599982,
-                "file_path": "results\\Jumper-01\\Jump\\Jump-599982.nn",
-                "reward": -0.8874999955296516,
-                "creation_time": 1606154266.5738416
+                "steps": 12249959,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12249959.nn",
+                "reward": -0.21428569938455308,
+                "creation_time": 1606257614.6856208
             },
             {
-                "steps": 649962,
-                "file_path": "results\\Jumper-01\\Jump\\Jump-649962.nn",
-                "reward": -0.9266666640837987,
-                "creation_time": 1606154510.2646751
+                "steps": 12299946,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12299946.nn",
+                "reward": -0.7933333287636439,
+                "creation_time": 1606257677.1310017
             },
             {
-                "steps": 699999,
-                "file_path": "results\\Jumper-01\\Jump\\Jump-699999.nn",
-                "reward": -0.861111105316215,
-                "creation_time": 1606154761.8858771
+                "steps": 12349939,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12349939.nn",
+                "reward": null,
+                "creation_time": 1606257742.5257244
             },
             {
-                "steps": 703764,
-                "file_path": "results\\Jumper-01\\Jump\\Jump-703764.nn",
-                "reward": -1.0,
-                "creation_time": 1606154787.5973911
+                "steps": 12376550,
+                "file_path": "results\\Jumper-01\\Jump\\Jump-12376550.nn",
+                "reward": -0.48999998681247237,
+                "creation_time": 1606257835.7402744
             }
         ],
         "final_checkpoint": {
-            "steps": 703764,
+            "steps": 12376550,
             "file_path": "results\\Jumper-01\\Jump.nn",
-            "reward": -1.0,
-            "creation_time": 1606154787.5973911
+            "reward": -0.48999998681247237,
+            "creation_time": 1606257835.7402744
         }
     },
     "metadata": {
