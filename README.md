@@ -6,21 +6,24 @@
 
 <!-- Start Document Outline -->
 
-* [Spelverloop](#spelverloop)
-* [Stap 1](#stap-1)
-* [Stap 2](#stap-2)
-* [Stap 3](#stap-3)
-	* [Agent/Jumper](#agentjumper)
-	* [Enemyblock](#enemyblock)
-	* [Wall of death](#wall-of-death)
-	* [Coin](#coin)
-	* [Spawner](#spawner)
-* [Stap 4](#stap-4)
-* [Stap 5](#stap-5)
-	* [Eerste training](#eerste-training)
-	* [Tweede training](#tweede-training)
-	* [Derde training](#derde-training)
-* [Bronvermelding](#bronvermelding)
+- [Jumper Exercise](#jumper-exercise)
+  - [Laura Dirckx & Nico Chauvaux](#laura-dirckx--nico-chauvaux)
+    - [Inhoudstafel](#inhoudstafel)
+    - [Spelverloop](#spelverloop)
+    - [Stap 1](#stap-1)
+    - [Stap 2](#stap-2)
+    - [Stap 3](#stap-3)
+      - [Agent/Jumper](#agentjumper)
+      - [Enemyblock](#enemyblock)
+      - [Wall of death](#wall-of-death)
+      - [Coin](#coin)
+      - [Spawner](#spawner)
+    - [Stap 4](#stap-4)
+    - [Stap 5](#stap-5)
+      - [Eerste training](#eerste-training)
+      - [Tweede training](#tweede-training)
+      - [Derde training](#derde-training)
+    - [Bronvermelding](#bronvermelding)
 
 <!-- End Document Outline -->
 
@@ -42,7 +45,7 @@ Scripts bekijken en aanpassen van ML-agents voorbeeld (WallJump).
 
 #### Agent/Jumper
 
-![Agent](Agent.png)
+![Agent](./AfbeeldingEnvironment/Agent.png)
 
 Eerst een script schrijven zodat de agent kan springen. Daarna maken we van dit 'normaal' script een Agent.
 
@@ -149,19 +152,19 @@ public class Jump : Agent
 
 'enemyblock' die op random snelheid in één richting beweegt.
 
-![Enemyblock](Enemyblock.png)
+![Enemyblock](./AfbeeldingEnvironment/Enemyblock.png)
 
 #### Wall of death
 
 We gebruiken een 'wall of death' zodat de 'enemyblocks' verwijdert worden.
 
-![Wallofdeath](wallofdeath.png)
+![Wallofdeath](./AfbeeldingEnvironment/wallofdeath.png)
 
 #### Coin
 
 Om de Agent te kunnen belonen voor het springen, gebruiken we coins die boven de enemyblocks zweven. Als de agent deze vangt, krijgt hij een reward.
 
-![coin](coin.png)
+![coin](./AfbeeldingEnvironment/coin.png)
 
 #### Spawner
 
